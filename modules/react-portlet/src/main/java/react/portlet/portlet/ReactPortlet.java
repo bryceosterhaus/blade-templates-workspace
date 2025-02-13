@@ -2,7 +2,6 @@ package react.portlet.portlet;
 
 import react.portlet.constants.ReactPortletKeys;
 
-import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 
 import java.io.IOException;
@@ -31,21 +30,4 @@ import org.osgi.service.component.annotations.Reference;
 	},
 	service = Portlet.class
 )
-public class ReactPortlet extends MVCPortlet {
-
-	@Override
-	public void doView(
-			RenderRequest renderRequest, RenderResponse renderResponse)
-		throws IOException, PortletException {
-
-		renderRequest.setAttribute(
-			"mainRequire",
-			_npmResolver.resolveModuleName("react-portlet") + " as main");
-
-		super.doView(renderRequest, renderResponse);
-	}
-
-	@Reference
-	private NPMResolver _npmResolver;
-
-}
+public class ReactPortlet extends MVCPortlet {}

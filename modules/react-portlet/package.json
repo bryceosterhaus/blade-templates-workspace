@@ -1,19 +1,15 @@
 {
 	"dependencies": {
-		"react": "16.8.6",
-		"react-dom": "16.8.6"
+		"react": "18.2.0",
+		"react-dom": "18.2.0"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.0.0",
-		"@babel/core": "^7.0.0",
-		"@babel/preset-env": "^7.0.0",
-		"@babel/preset-react": "^7.0.0",
-		"liferay-npm-bundler": "2.30.0"
+		"esbuild": "^0.20.2"
 	},
-	"main": "lib/index.es.js",
+	"main": "js/index.js",
 	"name": "react-portlet",
 	"scripts": {
-		"build": "babel --source-maps -d build/resources/main/META-INF/resources src/main/resources/META-INF/resources && liferay-npm-bundler"
+		"build": "esbuild ./src/main/resources/META-INF/resources/js/index.js --bundle --outfile=./build/resources/main/META-INF/resources/js/index.js --loader:.js=jsx --format=esm --external:react --external:react-dom"  
 	},
 	"version": "1.0.0"
 }
