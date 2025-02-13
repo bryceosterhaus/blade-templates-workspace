@@ -1,0 +1,10 @@
+Bundle-Name: form-field
+Bundle-SymbolicName: form.field
+Bundle-Version: 1.0.0
+Liferay-JS-Config: /META-INF/resources/config.js
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language",\
+	soy;\
+		type:String="LiferayFormField"
+Web-ContextPath: /dynamic-data-form-field-form-field
