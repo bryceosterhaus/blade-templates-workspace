@@ -2,7 +2,6 @@ package vue.portlet.portlet;
 
 import vue.portlet.constants.VuePortletKeys;
 
-import com.liferay.frontend.js.loader.modules.extender.npm.NPMResolver;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
 
 import java.io.IOException;
@@ -30,21 +29,4 @@ import org.osgi.service.component.annotations.Reference;
 	},
 	service = Portlet.class
 )
-public class VuePortlet extends MVCPortlet {
-
-	@Override
-	public void doView(
-			RenderRequest renderRequest, RenderResponse renderResponse)
-		throws IOException, PortletException {
-
-		renderRequest.setAttribute(
-			"mainRequire",
-			_npmResolver.resolveModuleName("vue-portlet") + " as main");
-
-		super.doView(renderRequest, renderResponse);
-	}
-
-	@Reference
-	private NPMResolver _npmResolver;
-
-}
+public class VuePortlet extends MVCPortlet {}
