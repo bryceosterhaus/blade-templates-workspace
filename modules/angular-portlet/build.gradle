@@ -1,0 +1,7 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+node {
+	nodeVersion = "16.15.0"
+}
