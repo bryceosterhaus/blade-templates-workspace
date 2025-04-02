@@ -1,7 +1,6 @@
 <%@ include file="/init.jsp" %>
 
-<div id="<portlet:namespace />"></div>
+<app-root></app-root>
 
-<aui:script require="<%= mainRequire %>">
-	main.default('#<portlet:namespace />');
-</aui:script>
+<script type="module" src="<%= request.getContextPath() %>/js/browser/polyfills.js"></script>
+<script type="module" src="<%= request.getContextPath() %>/js/browser/main.js"></script>
